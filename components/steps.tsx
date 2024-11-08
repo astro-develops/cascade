@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 //I got lazy and used svg's

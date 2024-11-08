@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Finlandica, Baloo_Bhai_2 } from "next/font/google";
 

@@ -3,7 +3,6 @@ import { motion, useAnimation } from "framer-motion";
 
 export default function Mouse() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const controls = useAnimation();
   const scaleControls = useAnimation();
 
   useEffect(() => {
