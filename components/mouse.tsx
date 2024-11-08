@@ -3,7 +3,6 @@ import { motion, useAnimation } from "framer-motion";
 
 export default function Mouse() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const controls = useAnimation();
   const scaleControls = useAnimation();
 
   useEffect(() => {
@@ -19,7 +18,6 @@ export default function Mouse() {
   }, []);
 
   useEffect(() => {
-    // Ensures scale controls are only called after component has mounted
     const divAndATags = document.querySelectorAll("div, a");
     divAndATags.forEach((el) => {
       const handleMouseEnter = () => scaleControls.start({ scale: 2 });
