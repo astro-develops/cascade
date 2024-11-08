@@ -33,7 +33,7 @@ export default function Home() {
       <motion.div
         whileHover={{ scale: 1.03, rotate: -1 }}
         transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        className="py-20 md:-mt-[10vh] px-12 mx-24 text-left bg-[#FFFFFF22] border-[#6797E622] border-[3px] rounded-xl"
+        className="py-20 md:-mt-[10vh] px-12 mx-12 md:mx-24 text-left bg-[#FFFFFF22] border-[#6797E622] border-[3px] rounded-xl"
       >
         <h1
           className={`${balooBhai.className} text-5xl md:text-6xl text-[#6797E6] relative`}

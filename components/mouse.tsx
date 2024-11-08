@@ -3,6 +3,7 @@ import { motion, useAnimation } from "framer-motion";
 
 export default function Mouse() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const controls = useAnimation();
   const scaleControls = useAnimation();
 
   useEffect(() => {
@@ -18,20 +19,25 @@ export default function Mouse() {
   }, []);
 
   useEffect(() => {
-    const divAndATags = document.querySelectorAll("a");
+    // Ensures scale controls are only called after component has mounted
+    const divAndATags = document.querySelectorAll("div, a");
     divAndATags.forEach((el) => {
-      el.addEventListener("mouseenter", () => {
-        scaleControls.start({ scale: 2 });
-      });
-      el.addEventListener("mouseleave", () => {
-        scaleControls.start({ scale: 1 });
-      });
+      const handleMouseEnter = () => scaleControls.start({ scale: 2 });
+      const handleMouseLeave = () => scaleControls.start({ scale: 1 });
+
+      el.addEventListener("mouseenter", handleMouseEnter);
+      el.addEventListener("mouseleave", handleMouseLeave);
+
+      return () => {
+        el.removeEventListener("mouseenter", handleMouseEnter);
+        el.removeEventListener("mouseleave", handleMouseLeave);
+      };
     });
   }, [scaleControls]);
 
   return (
     <motion.div
-      className="fixed z-[-1] bg-[#FFFFFF00] border-none w-12 h-12 border-2 rounded-full pointer-events-none"
+      className="fixed w-12 h-12 bg-[#FFFFFF00] rounded-full rounded-full pointer-events-none"
       animate={{
         x: position.x - 25,
         y: position.y - 25,
@@ -43,7 +49,7 @@ export default function Mouse() {
       }}
     >
       <motion.div
-        className="fixed z-[-1] w-12 h-12 bg-[#4D6CBF22] border-[#4D6CBF] border-2 rounded-full pointer-events-none "
+        className="w-full h-full bg-[#4D6CBF22] border-[#4D6CBF] border-2 rounded-full"
         animate={scaleControls}
         transition={{
           type: "spring",
@@ -55,4 +61,3 @@ export default function Mouse() {
   );
 }
 
-//fixed z-[-1] w-12 h-12 bg-[#4D6CBF22] border-[#4D6CBF] border-2 rounded-full pointer-events-none

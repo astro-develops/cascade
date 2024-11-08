@@ -46,7 +46,7 @@ export default function About() {
         </motion.div>
       </div>
 
-      <div className="-rotate-[5deg] -mt-[10vh]">
+      <div className="-rotate-[5deg] md:-mt-[10vh]">
         <article className="wrapper w-[100vw]">
           <div className="marquee">
             <div className="marquee__group">
@@ -62,7 +62,7 @@ export default function About() {
                     <img
                       src={`${e.link}/image/large.png`}
                       alt={`${e.author}'s demo image`}
-                      className="w-[20vw] rounded"
+                      className="w-[30vh] rounded"
                     />
                   </div>
                   <p
@@ -87,7 +87,7 @@ export default function About() {
                     <img
                       src={`${e.link}/image/large.png`}
                       alt={`${e.author}'s demo image`}
-                      className="w-[20vw] rounded"
+                      className="w-[30vh] rounded"
                     />
                   </div>
                   <p className={`pt-2 p-4 text-ms ${finlandica.className}`}>
