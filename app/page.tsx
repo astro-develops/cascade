@@ -63,7 +63,7 @@ export default function Home() {
           <span className="border-b-2 border-[#000] hover:border-[#4D6CBF] hover:text-[#4D6CBF] ease-in-out duration-300 font-medium">
             Uniqueness
           </span>
-          : Must be unique. (Cannot do a project similar to someone else's).
+          : Must be unique. (Cannot do a project similar to someone else&apos;s).
           <br />
         </p>
       </motion.div>
