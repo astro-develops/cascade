@@ -19,9 +19,9 @@ export default function Hero() {
             animate={{ scale: 1 }}
             whileHover={{ scale: 1.1, rotate: -5, background: "#EFB9785a" }}
             className="border-[#EFB978] border-2 px-4 py-2 rounded text-sm text-center text-[#000]"
-            href="#"
+            href="https://cascade.hackclub.com/"
           >
-            Gallery
+            Actual Site
           </motion.a>
           <motion.a
             initial={{ scale: 0 }}
